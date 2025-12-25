@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>                                                                                                                                       
+<beans xmlns="http://www.springframework.org/schema/beans"                                                                                                                   
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"                                                                                                                 
+       xmlns:p="http://www.springframework.org/schema/p"                                                                                                                     
+       xmlns:c="http://www.springframework.org/schema/c"                                                                                                                     
+       xmlns:context="http://www.springframework.org/schema/context"                                                                                                         
+       xsi:schemaLocation="                                                                                                                                                  
+           http://www.springframework.org/schema/beans                                                                                                                       
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd                                                                                                  
+           http://www.springframework.org/schema/context                                                                                                                     
+           http://www.springframework.org/schema/context/spring-context.xsd">                                                                                                
+                                                                                                                                                                             
+      <context:annotation-config/>                                                                                                                                           
+        
+        <!-- collecction bean -->
+    <bean id="ob1" class="com.second.collecction">
+        <property name="name" value="pushkal sharma" />
+        <property name="ans">
+            <list>
+                <value>ye jivan ek jung h</value>
+                <value>use ladke hame jitna hoga</value>
+            </list>
+        </property>
+        <property name="ans1">
+            <set>
+                <value>apne sanskaro ko dhyan me rakhte huye</value>
+                <value>hame apne karm krna chahiye</value>
+            </set>
+        </property>
+        <property name="ans2">
+            <map>
+                <entry key="1" value="dharma ka palan karo"/>
+                <entry key="2" value="adharma ka ant karo"/>
+            </map>
+        </property>
+    </bean>
+                                                                                                                                                                        
+      <!-- byname-->                                                                                                                                                     
+                                                                                                                                                                             
+    <bean id="ab1" class="com.forth.autowireViaXml" autowire="byName" />  
+                                                     
+      <!-- bytype-->                                                                                                                                                     
+                                                                                                                                                                             
+    <bean id="ab2" class="com.forth.autowireViaXml" autowire="byType" />
+                                                       
+      <!-- byname-->                                                                                                                                                     
+                                                                                                                                                                             
+    <bean id="ab3" class="com.forth.autowireViaXml" autowire="constructor" />                                                   
+                                                                                                                                                                             
+                                                                                                  
+                                                                                                                                                                             
+                                                                                                                                                                             
+                                                                                                                                                                             
+                                                                                                                                                                             
+</beans>                                                                                                                                                                     

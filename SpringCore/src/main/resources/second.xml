@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- collecction bean -->
+    <bean id="ob1" class="com.second.collecction">
+        <property name="name" value="pushkal sharma" />
+        <property name="ans">
+            <list>
+                <value>ye jivan ek jung h</value>
+                <value>use ladke hame jitna hoga</value>
+            </list>
+        </property>
+        <property name="ans1">
+            <set>
+                <value>apne sanskaro ko dhyan me rakhte huye</value>
+                <value>hame apne karm krna chahiye</value>
+            </set>
+        </property>
+        <property name="ans2">
+            <map>
+                <entry key="1" value="dharma ka palan karo"/>
+                <entry key="2" value="adharma ka ant karo"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- refer bean -->
+    <bean id="ob2" class="com.second.refer" p:a="1221" p:collect-ref="ob1" />
+
+    <!-- ambiguity bean using c-namespace -->
+    <bean id="ob3" class="com.second.ambiguity" c:x="2332" c:y="hello" />
+
+    <!-- ambiguity bean using constructor-arg to resolve ambiguity -->
+    <bean id="ob4" class="com.second.ambiguity">
+        <constructor-arg type="int" value="2332" />
+        <constructor-arg type="java.lang.String" value="hello" />
+    </bean>
+
+</beans>
