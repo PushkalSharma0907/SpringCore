@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "https://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+  <session-factory>
+    <!-- Database connection settings -->
+    <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernet</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">puru@0911</property>
+
+    <!-- SQL dialect -->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+    <!-- Echo all executed SQL to stdout -->
+    <property name="hibernate.show_sql">true</property>
+    
+    <!-- Format SQL output -->
+    <property name="hibernate.format_sql">true</property>
+
+    <!-- Automatically update the database schema -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    
+    <property name="cache.use_second_level_cache">true</property>
+   
+    <property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+    
+    <!-- mapping is used as  This tag tells Hibernate where to find the mapping information—either in XML mapping files (.hbm.xml) or via annotated classes.
+  -->
+    
+    
+    
+     <mapping class="com.ref.Certificate"/>
+     <mapping class="com.first.Student"/>
+    			
+<!-- <mapping class="com.map.oneToMany.question"/>
+<mapping class="com.map.oneToMany.answer"/>		-->
+  </session-factory>
+</hibernate-configuration>
