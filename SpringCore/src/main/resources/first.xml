@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:c="http://www.springframework.org/schema/c"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+
+ 
+ 
+ <bean id="ab" class="com.first.basic">
+<property name="a" >
+<value>1008</value>									<!-- via setter it set the value-->
+</property>
+<property name="b" value ="1223" />
+<property name="c" value ="1345" />
+</bean>
+
+<bean id="ab1" class="com.first.basic" 
+p:a ="123" p:b="456" p:c="789" />
+
+<bean id="ob1" class="com.first.Const">				<!-- via constructor it set the value-->
+    <constructor-arg value="143" />
+    <constructor-arg value="the magic of maths number" type="java.lang.String"/>
+    <constructor-arg value="12" />
+</bean>
+
+
+<bean id="ob2" class="com.first.Const" 
+c:yoyo="123" c:str="jai hind" c:yo="456" />
+</beans>
